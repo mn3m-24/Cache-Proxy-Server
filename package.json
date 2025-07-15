@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.13",
@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "commander": "^14.0.0",
+    "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "node-cache": "^5.1.2"
+    "redis": "^5.6.0"
   }
 }
