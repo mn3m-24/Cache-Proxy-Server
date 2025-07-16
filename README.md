@@ -4,18 +4,10 @@
 
 This is a Node.js-based caching proxy server built with Express and Redis. It forwards HTTP GET requests to a specified origin URL, caches the responses in Redis, and serves cached content when available to reduce latency and load on the origin server.
 
-## Features
-
-- **Caching**: Stores responses in Redis with a configurable TTL (default: 3600 seconds).
-- **Proxying**: Forwards requests to the specified origin URL and handles responses.
-- **Cache Management**: Supports listing and clearing cache keys via CLI commands.
-- **TypeScript**: Written in TypeScript for type safety and better developer experience.
-- **Environment Configuration**: Uses `.env` for configuration (e.g., Redis URL, server host, cache TTL).
-
 ## Prerequisites
 
 - **Node.js**: Version 18 or higher (ESM support required).
-- **pnpm**: Version 10.13.1 or compatible (used as the package manager).
+- **pnpm or any JS package manager**: Version 10.13.1 or compatible (used as the package manager).
 - **Redis**: A running Redis instance (local or remote).
 - **TypeScript**: For compiling the source code.
 
@@ -40,12 +32,6 @@ This is a Node.js-based caching proxy server built with Express and Redis. It fo
    SERVER_HOST=<server_host>
    CACHE_URL=redis://<redis_host>:<redis_port>
    CACHE_TTL=<custom_ttl>
-   ```
-
-4. **Build the project**:
-
-   ```bash
-   pnpm build
    ```
 
 ## Usage
@@ -137,12 +123,6 @@ Requests to `http://localhost:3000/path` will be forwarded to `http://example.co
 - **SERVER_HOST**: Hostname for the server (default: `localhost`).
 - **CACHE_URL**: Redis connection URL (e.g., `redis://localhost:6379`).
 - **CACHE_TTL**: Cache expiration time in seconds (default: `3600`).
-
-## Error Handling
-
-- Invalid port numbers (&lt;0 or &gt;65535) will throw an error.
-- Redis connection errors are logged to the console.
-- Invalid CLI options result in an error message and exit code 1.
 
 ## Notes
 
